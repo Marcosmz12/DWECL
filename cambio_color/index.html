@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio color</title>
+</head>
+
+<body>
+    <button id="rojo">Boton Rojo</button>
+    <button id="amarillo">Boton Amarillo</button>
+    <button id="verde">Boton Verde</button>
+
+    <script>
+
+        let btnRojo = document.getElementById("rojo");
+        let btnAmarillo = document.getElementById("amarillo");
+        let btnVerde = document.getElementById("verde");
+
+        function establecerColor(color) {
+
+            switch (color) {
+                case "red":
+                    document.body.style.backgroundColor = "red";
+                    break;
+
+                case "yellow":
+                    document.body.style.backgroundColor = "yellow";
+                    break;
+
+                case "green":
+                    document.body.style.backgroundColor = "green";
+                    break;
+
+                default:
+                    break;
+            }
+
+        }
+
+        btnRojo.addEventListener("click", () => establecerColor("red"));
+        btnAmarillo.addEventListener("click", () => establecerColor("yellow"));
+        btnVerde.addEventListener("click", () => establecerColor("green"));
+    </script> 
+</body>
+
+</html>
