@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function cubo_array(f, a) {
+            const resultado = new Array(a.length);
+            for (let index = 0; index < a.length; index++) {
+                resultado[index] = f(a[index]);
+
+            }
+            return resultado
+        }
+
+        const numeros = [0, 1, 2, 5, 10];
+
+        console.log(numeros);
+        const cubo = cubo_array(function (x) {
+            return x * x * x;
+
+        }, numeros);
+
+        console.log(cubo);
+    </script>
+</body>
+
+</html>
