@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio05</title>
+</head>
+
+<body>
+    <script>
+        document.cookie = "nombre=Juan";
+        document.cookie = "ciudad=Granada";
+        document.cookie = "edad=25";
+
+        let datos = document.cookie.split(";");
+        let nombre = datos[0].split("=")[1]
+
+        console.log(document.cookie);
+        document.write(nombre)
+
+
+    </script>
+</body>
+
+</html>

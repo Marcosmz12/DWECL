@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 09</title>
+</head>
+
+<body>
+
+    Nombre:
+    <input type="text" id="nombre">
+    <button onclick="guardar()">Guardar nombre</button>
+
+    <p id="saludo"></p>
+
+    <script>
+        function guardar() {
+            let nombre = document.getElementById("nombre").value;
+
+            document.cookie = "nombre=" + nombre;
+
+            document.getElementById("saludo").innerHTML = "¡Hola, " + nombre + "!";
+        }
+
+        function comprobarCookie() {
+            let nombre = document.cookie.split("=")[1];
+
+            if (nombre) {
+                document.getElementById("saludo").innerHTML = "¡Bienvenida de nuevo, " + nombre + "!";
+            } else {
+                document.getElementById("saludo").innerHTML = "No conocemos tu nombre.";
+            }
+        }
+
+        comprobarCookie();
+    </script>
+
+</body>
+
+</html>

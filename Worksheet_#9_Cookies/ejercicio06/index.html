@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 06</title>
+</head>
+
+<body>
+    <script>
+        document.cookie = "nombre=Juan";
+        document.cookie = "ciudad=Granada";
+        document.cookie = "edad=25";       
+
+
+        function obtenerCookie(nombre) {
+            let datos = document.cookie.split(";");
+
+            for (let cookie of datos) {
+                let partes = cookie.trim().split("=");
+
+                if(partes[0] === nombre){
+                    return partes[1];
+                }
+            }
+            return null;
+        }
+
+        document.write(obtenerCookie("nombre"));
+        document.write(obtenerCookie("ciudad"));
+        document.write(obtenerCookie("edad"));
+        console.log(obtenerCookie("nombre"));
+        console.log(obtenerCookie("ciudad"));
+        console.log(obtenerCookie("edad"));
+    </script>
+</body>
+
+</html>

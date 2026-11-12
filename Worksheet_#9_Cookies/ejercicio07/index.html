@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 07</title>
+</head>
+
+<body>
+    <label for="nombre">¿Cuál es tu nombre?</label> <br><br>
+    <input type="text" name="nombre" id="nombre">
+    <button onclick="guardar()">Guardar</button>
+
+    <hr>
+    <p id="saludo"></p>
+    <script>
+        function guardar() {
+            let nombre = document.getElementById("nombre").value;
+
+            document.cookie = "nombre = " + nombre;
+
+            document.getElementById("saludo").innerHTML = "¡Hola, " + nombre + "!";
+        }
+    </script>
+</body>
+
+</html>
