@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio01</title>
+</head>
+
+<body>
+    <p id="aleatorio0a1"></p>
+    <p id="aleatorio100a200"></p>
+    <p id="aleatorio"></p>
+    <script>
+        let aleatorio0a1 = Math.floor(Math.random() * 2);
+        let aleatorio100 = Math.floor(Math.random() * 101) + 100;
+        console.log(aleatorio0a1);
+        console.log(aleatorio100);
+        document.getElementById("aleatorio0a1").innerHTML = "Numero aleatorio de 0 a 1 = " + aleatorio0a1;
+        document.getElementById("aleatorio100a200").innerHTML = "Numero aleatorio de 100 a 200 = " + aleatorio100;
+
+
+        let num1 = parseInt(prompt("Escribe el primer número: "), 10);
+        let num2 = parseInt(prompt("Escribe el segundo número: "), 10);
+
+        if (isNaN(num1) || isNaN(num2)) {
+            alert("Error: debes introducir dos números válidos.");
+        } else {
+            let min = Math.min(num1, num2); // 👈 Esta es la línea que faltaba
+            let max = Math.max(num1, num2);
+            let aleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("aleatorio").innerHTML = `Tu número aleatorio entre ${min} y ${max} es: ${aleatorio}`;
+        }
+
+
+
+    </script>
+</body>
+
+</html>

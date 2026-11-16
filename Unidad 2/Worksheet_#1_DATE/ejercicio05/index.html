@@ -14,6 +14,21 @@
         el metodo setTimeout() crea un reloj que se actualice cada segundo.</h2>
     <hr>
     <h1 id="reloj"></h1>
+    <script>
+        function reloj() {
+            let fecha = new Date();
+
+            let h = fecha.getHours();
+            let m = fecha.getMinutes();
+            let s = fecha.getSeconds();
+
+            document.getElementById("reloj").innerHTML = h + ":" + m + ":" + s;
+
+            setTimeout(reloj, 1000);
+        }
+
+        reloj();
+    </script>
 </body>
 
 </html>
