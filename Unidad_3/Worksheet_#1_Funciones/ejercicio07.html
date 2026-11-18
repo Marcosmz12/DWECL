@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function obtenerMedia(primerNumero, ...theRest) {
+            let total = primerNumero;
+
+            for (let numero of theRest) {
+                total += numero;
+            }
+            
+            let media = total / theRest.length;
+
+            return "Resultado suma = " + total + ", resultado media = " + media;
+        }
+
+        console.log(obtenerMedia(5, 7, 9));
+        console.log(obtenerMedia(10, 20, 30, 40));
+    </script>
+</body>
+
+</html>

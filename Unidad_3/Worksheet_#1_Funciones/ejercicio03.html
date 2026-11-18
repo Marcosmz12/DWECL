@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function presentar(nombre = "Invitado", edad = 18) {
+            console.log("Nombre: " + nombre);
+            console.log("Edad: " + edad);
+        }
+        presentar("Laura", 25);
+        presentar("Pedro");
+        presentar();
+        presentar(undefined, 30);
+        presentar(null, 20);
+    </script>
+</body>
+
+</html>
