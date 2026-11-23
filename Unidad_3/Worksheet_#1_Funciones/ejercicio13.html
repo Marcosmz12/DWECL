@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const calcularEstadisticas = function (...theRest) {
+            const cantidad = theRest.length;
+
+            let suma = 0;
+            for (let num of theRest) {
+                suma += num;
+            }
+
+            const media = suma / cantidad;
+
+            return {
+                cantidad: cantidad,
+                suma: suma,
+                media: media
+            };
+        };
+
+        const resultado = calcularEstadisticas(10, 20, 30, 40);
+        console.log(resultado);
+    </script>
+</body>
+
+</html>

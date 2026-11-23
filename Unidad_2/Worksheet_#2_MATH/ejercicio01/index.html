@@ -26,7 +26,7 @@
         if (isNaN(num1) || isNaN(num2)) {
             alert("Error: debes introducir dos números válidos.");
         } else {
-            let min = Math.min(num1, num2); // 👈 Esta es la línea que faltaba
+            let min = Math.min(num1, num2);
             let max = Math.max(num1, num2);
             let aleatorio = Math.floor(Math.random() * (max - min + 1)) + min;
             document.getElementById("aleatorio").innerHTML = `Tu número aleatorio entre ${min} y ${max} es: ${aleatorio}`;

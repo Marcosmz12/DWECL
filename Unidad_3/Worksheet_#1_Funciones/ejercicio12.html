@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const filtrarMayores = (limite, ...theRest) => {
+            return theRest.filter(numero => numero > limite);
+        };
+
+        
+        console.log(filtrarMayores(10, 5, 12, 8, 20, 3, 15));
+    </script>
+</body>
+
+</html>
