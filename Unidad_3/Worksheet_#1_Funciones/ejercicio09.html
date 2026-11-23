@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function ejecutarOperacion(a, b, operacion) {
+            return operacion(a, b);
+        }
+
+        const suma = ejecutarOperacion(5, 3, function (a, b) {
+            return a + b;
+        });
+        console.log("Suma:", suma); 
+
+        const multiplicacion = ejecutarOperacion(5, 3, (a, b) => a * b);
+        console.log("Multiplicación:", multiplicacion); 
+
+        const potencia = ejecutarOperacion(5, 3, (a, b) => a ** b);
+        console.log("Potencia:", potencia); 
+    </script>
+</body>
+
+</html>

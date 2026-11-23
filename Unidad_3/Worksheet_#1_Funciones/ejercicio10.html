@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const crearUsuario = (nombre = "Anónimo", edad = 18, ciudad = "Madrid") => {
+            return `Usuario: ${nombre}, edad: ${edad}, ciudad: ${ciudad}`;
+        };
+
+        console.log(crearUsuario("Ana", 25, "Málaga"));
+
+        console.log(crearUsuario("Carlos", 30));
+
+        console.log(crearUsuario("Lucía"));
+
+        console.log(crearUsuario());
+    </script>
+</body>
+
+</html>

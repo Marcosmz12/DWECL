@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function obtenerMaximo() {
+            let maximo = arguments[0];
+
+            for (let i = 1; i < arguments.length; i++) {
+                if (arguments[i] > maximo) {
+                    maximo = arguments[i];
+                }
+            }
+
+            return maximo;
+        }
+
+        console.log(obtenerMaximo(4, 9, 2, 15, 7)); 
+        console.log(obtenerMaximo(25, 12, 8));      
+        console.log(obtenerMaximo(-5, -2, -10));    
+    </script>
+</body>
+
+</html>
