@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <p id="aviso"></p>
+    <script>
+        let mensaje = "Probando el objeto Window de JavaScript";
+        window.status = mensaje;
+
+        // Lo mostramos también en la página para poder verlo en navegadores modernos
+        document.getElementById("aviso").innerHTML = "Mensaje en barra de estado: " + mensaje;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+</head>
+<body>
+    <script>
+        // a) Invierte toda la cadena
+        function invierteCadena(cad_arg) {
+            return cad_arg.split("").reverse().join("");
+        }
+
+        // b) Invierte cada palabra de la cadena
+        function inviertePalabras(cad_arg) {
+            let palabras = cad_arg.split(" ");
+            for (let i = 0; i < palabras.length; i++) {
+                palabras[i] = palabras[i].split("").reverse().join("");
+            }
+            return palabras.join(" ");
+        }
+
+        // c) Devuelve la longitud de la palabra más larga
+        function encuentraPalabraMasLarga(cad_arg) {
+            let palabras = cad_arg.split(" ");
+            let max = 0;
+            for (let i = 0; i < palabras.length; i++) {
+                if (palabras[i].length > max) {
+                    max = palabras[i].length;
+                }
+            }
+            return max;
+        }
+
+        // d) Cuenta cuántas palabras tienen una longitud mayor a i
+        function filtraPalabrasMasLargas(cad_arg, i) {
+            let palabras = cad_arg.split(" ");
+            let contador = 0;
+            for (let j = 0; j < palabras.length; j++) {
+                if (palabras[j].length > i) {
+                    contador++;
+                }
+            }
+            return contador;
+        }
+
+        // e) Primera letra en mayúscula y el resto en minúscula
+        function cadenaBienFormada(cad_arg) {
+            return cad_arg.charAt(0).toUpperCase() + cad_arg.slice(1).toLowerCase();
+        }
+
+        // --- Pruebas llamando a las funciones ---
+        let texto = prompt("Introduce una frase:");
+        let numero = Number(prompt("Introduce un número de letras para filtrar:"));
+
+        document.write("<p><b>Texto original:</b> " + texto + "</p>");
+        document.write("<p>a) Cadena invertida: " + invierteCadena(texto) + "</p>");
+        document.write("<p>b) Palabras invertidas: " + inviertePalabras(texto) + "</p>");
+        document.write("<p>c) Longitud de la palabra más larga: " + encuentraPalabraMasLarga(texto) + "</p>");
+        document.write("<p>d) Palabras con más de " + numero + " letras: " + filtraPalabrasMasLargas(texto, numero) + "</p>");
+        document.write("<p>e) Cadena bien formada: " + cadenaBienFormada(texto) + "</p>");
+    </script>
+</body>
+</html>

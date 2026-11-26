@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <p id="reloj"></p>
+
+    <script>
+        function mostrarHora() {
+            let ahora = new Date();
+            let h = ahora.getHours();
+            let m = ahora.getMinutes();
+            let s = ahora.getSeconds();
+
+            if (h < 10) h = "0" + h;
+            if (m < 10) m = "0" + m;
+            if (s < 10) s = "0" + s;
+
+            let horaFormateada = h + ":" + m + ":" + s;
+
+            window.status = horaFormateada;
+
+            document.getElementById("reloj").innerHTML = "Hora actual: " + horaFormateada;
+        }
+
+        mostrarHora();
+        setInterval(mostrarHora, 1000); 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+</head>
+
+<body>
+    <script>
+        do {
+            let cateto1 = Number(prompt("Introduce el tamaño del primer cateto:"));
+            let cateto2 = Number(prompt("Introduce el tamaño del segundo cateto:"));
+
+            let hipotenusa = Math.sqrt(Math.pow(cateto1, 2) + Math.pow(cateto2, 2));
+            alert("La hipotenusa es: " + hipotenusa);
+
+        } while (confirm("¿Quieres calcular otra hipotenusa?"));
+    </script>
+</body>
+
+</html>

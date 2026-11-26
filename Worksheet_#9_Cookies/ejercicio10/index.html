@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 10 — Borrar cookie</title>
+</head>
+
+<body>
+
+    Nombre:
+    <input type="text" id="nombre">
+    <button onclick="guardar()">Guardar nombre</button>
+    <button onclick="borrar()">Borrar nombre</button>
+
+    <p id="saludo"></p>
+
+    <script>
+        function guardar() {
+            let nombre = document.getElementById("nombre").value;
+            document.cookie = "nombre=" + nombre;
+            document.getElementById("saludo").innerHTML = "¡Hola, " + nombre + "!";
+        }
+
+        function borrar() {
+            document.cookie = "nombre=; max-age=0";
+            document.getElementById("saludo").innerHTML = "No conocemos tu nombre.";
+            document.getElementById("nombre").value = "";
+        }
+
+        function comprobarCookie() {
+            let nombre = document.cookie.split("=")[1];
+
+            if (nombre) {
+                document.getElementById("saludo").innerHTML = "¡Bienvenida de nuevo, " + nombre + "!";
+            } else {
+                document.getElementById("saludo").innerHTML = "No conocemos tu nombre.";
+            }
+        }
+
+        comprobarCookie();
+    </script>
+
+</body>
+
+</html>

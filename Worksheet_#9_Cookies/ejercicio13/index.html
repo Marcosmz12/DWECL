@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 13 — Miniaplicación</title>
+</head>
+
+<body>
+    <div id="bloque-formulario">
+        <p>¿Cuál es tu nombre?</p>
+        <input type="text" id="campo-nombre">
+        <button onclick="guardar()">Guardar</button>
+    </div>
+
+    <div id="bloque-saludo" style="display: none;">
+        <h2 id="mensaje"></h2>
+        <button onclick="cambiar()">Cambiar nombre</button>
+        <button onclick="borrar()">Borrar nombre</button>
+    </div>
+
+    <script>
+        // Función para leer la cookie llamada "nombre"
+        function leerCookie() {
+            let cookies = document.cookie.split("; ");
+            for (let c of cookies) {
+                let [clave, valor] = c.split("=");
+                if (clave === "nombre") return valor;
+            }
+            return "";
+        }
+
+        // 1. Guardar el nombre
+        function guardar() {
+            let nombre = document.getElementById("campo-nombre").value;
+
+            if (nombre.trim() !== "") {
+
+                document.cookie = "nombre=" + nombre + "; max-age=86400; path=/";
+
+
+                document.getElementById("mensaje").innerHTML = "¡Hola, " + nombre + "!";
+
+
+                document.getElementById("bloque-formulario").style.display = "none";
+                document.getElementById("bloque-saludo").style.display = "block";
+            }
+        }
+
+        // 2. Cambiar el nombre (vuelve a mostrar el formulario)
+        function cambiar() {
+            document.getElementById("bloque-saludo").style.display = "none";
+            document.getElementById("bloque-formulario").style.display = "block";
+        }
+
+        // 3. Borrar el nombre
+        function borrar() {
+
+            document.cookie = "nombre=; max-age=0; path=/";
+
+
+            document.getElementById("campo-nombre").value = "";
+            document.getElementById("bloque-saludo").style.display = "none";
+            document.getElementById("bloque-formulario").style.display = "block";
+        }
+
+        // 4. Comprobación automática al entrar a la página
+        let usuarioGuardado = leerCookie();
+
+        if (usuarioGuardado) {
+            document.getElementById("mensaje").innerHTML = "¡Hola de nuevo, " + usuarioGuardado + "!";
+            document.getElementById("bloque-formulario").style.display = "none";
+            document.getElementById("bloque-saludo").style.display = "block";
+        }
+    </script>
+
+</body>
+
+</html>

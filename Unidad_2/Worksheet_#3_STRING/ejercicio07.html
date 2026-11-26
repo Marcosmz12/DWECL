@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 7</title>
+</head>
+<body>
+    <script>
+        function esPalindromo(cadena) {
+            // Pasamos a minúsculas y quitamos espacios para que funcione también con frases
+            let limpia = cadena.toLowerCase().split(" ").join("");
+            let invertida = limpia.split("").reverse().join("");
+
+            if (limpia === invertida) {
+                return "Es un palíndromo.";
+            } else {
+                return "No es un palíndromo.";
+            }
+        }
+
+        let texto = prompt("Introduce una palabra o frase:");
+        document.write("<p>" + esPalindromo(texto) + "</p>");
+    </script>
+</body>
+</html>

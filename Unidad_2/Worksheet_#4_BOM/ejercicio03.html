@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3 - Window</title>
+</head>
+
+<body>
+    <h2>Pruebas con el objeto Window</h2>
+    <p id="textoPadre"></p>
+
+    <ul>
+        <li><a href="#" onclick="apartadoA(); return false;">a) Ventana de confirmación</a></li>
+        <li>
+            <a href="#" onclick="abrirParaComprobar(); return false;"> b) Abrir ventana</a> |
+            <a href="#" onclick="comprobarCerrada(); return false;">Comprobar si se cerró</a>
+        </li>
+        <li><a href="#" onclick="apartadoC(); return false;">c) Cambiar línea de estado</a></li>
+        <li><a href="#" onclick="apartadoD(); return false;">d) Abrir ventana y pedir nuevo nombre</a></li>
+        <li>
+            <a href="#" onclick="window.close(); return false;">e) Cerrar ventana actual</a> |
+            <a href="#" onclick="cerrarNueva(); return false;">Cerrar ventanaNueva</a>
+        </li>
+        <li><a href="#" onclick="apartadoF(); return false;">f) Abrir ventana 300x100 redimensionable</a></li>
+        <li><a href="#" onclick="apartadoG(); return false;">g) Abrir ventana y escribir en la página padre</a></li>
+        <li><a href="#" onclick="window.moveBy(50, 50); return false;">h) Mover ventana 50px abajo y derecha</a></li>
+        <li><a href="#" onclick="window.moveTo(100, 100); return false;">i) Situar ventana en posición (100, 100)</a>
+        </li>
+        <li><a href="#" onclick="window.resizeBy(50, 50); return false;">j) Cambiar tamaño +50x50 px</a></li>
+        <li><a href="#" onclick="window.resizeTo(450, 250); return false;">k) Cambiar tamaño a 450x250 px</a></li>
+        <li><a href="#" onclick="window.scrollBy(0, 10); return false;">l) Mover scroll 10px hacia abajo</a></li>
+        <li><a href="#" onclick="window.scrollTo(0, 300); return false;">m) Desplazar scroll a la posición 300</a></li>
+    </ul>
+
+    <!-- Espacio extra para que aparezca la barra de desplazamiento (apartados l y m) -->
+    <div style="height: 1500px;"></div>
+
+    <script>
+        let ventanaNueva;
+
+        function apartadoA() {
+            let opcion = confirm("¿Quieres aceptar o cancelar?");
+            if (opcion) {
+                alert("Has pulsado Aceptar");
+            } else {
+                alert("Has pulsado Cancelar");
+            }
+        }
+
+        function abrirParaComprobar() {
+            ventanaNueva = window.open("", "vPrueba", "width=300,height=200");
+        }
+
+        function comprobarCerrada() {
+            if (!ventanaNueva) {
+                alert("Todavía no has abierto la ventana.");
+            } else if (ventanaNueva.closed) {
+                alert("La ventana SÍ se cerró.");
+            } else {
+                alert("La ventana NO se ha cerrado (sigue abierta).");
+            }
+        }
+
+        function apartadoC() {
+            window.status = "Nuevo mensaje en la barra de estado";
+            alert("Se ha cambiado la línea de estado a: " + window.status);
+        }
+
+        function apartadoD() {
+            ventanaNueva = window.open("", "nombreInicial", "width=300,height=200");
+            let nuevoNombre = prompt("Introduce el nuevo nombre para la ventana:");
+            ventanaNueva.name = nuevoNombre;
+            alert("El nuevo nombre de la ventana es: " + ventanaNueva.name);
+        }
+
+        function cerrarNueva() {
+            if (ventanaNueva && !ventanaNueva.closed) {
+                ventanaNueva.close();
+            }
+        }
+
+        function apartadoF() {
+            ventanaNueva = window.open("", "vRedimensionable", "width=300,height=100,resizable=yes");
+        }
+
+        function apartadoG() {
+            ventanaNueva = window.open("", "vPadre", "width=300,height=100,resizable=yes");
+            ventanaNueva.document.write("<p>Ventana hija abierta.</p>");
+            ventanaNueva.opener.document.getElementById("textoPadre").innerHTML = "<b>Texto escrito desde la ventana hija.</b>";
+        }
+    </script>
+</body>
+
+</html>

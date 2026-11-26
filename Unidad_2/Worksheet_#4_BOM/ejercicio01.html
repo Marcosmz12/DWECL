@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1 - Navigator</title>
+</head>
+
+<body>
+    <h2>Información del Navegador</h2>
+    <script>
+        document.write("<table border='1' cellpadding='5'>");
+        document.write("<tr><th>Propiedad</th><th>Valor</th></tr>");
+
+        for (let prop in navigator) {
+            if (typeof navigator[prop] !== "function") {
+                document.write("<tr>");
+                document.write("<td>" + prop + "</td>");
+                document.write("<td>" + navigator[prop] + "</td>");
+                document.write("</tr>");
+            }
+        }
+
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

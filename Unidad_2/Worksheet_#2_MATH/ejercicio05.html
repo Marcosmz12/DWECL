@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 5</title>
+</head>
+
+<body>
+    <script>
+        let a = Number(prompt("Introduce el coeficiente a:"));
+        let b = Number(prompt("Introduce el coeficiente b:"));
+        let c = Number(prompt("Introduce el coeficiente c:"));
+
+        let discriminante = Math.pow(b, 2) - 4 * a * c;
+
+        if (discriminante > 0) {
+            let x1 = (-b + Math.sqrt(discriminante)) / (2 * a);
+            let x2 = (-b - Math.sqrt(discriminante)) / (2 * a);
+            document.write("<p>Tiene dos soluciones: x1 = " + x1 + " y x2 = " + x2 + "</p>");
+        } else if (discriminante === 0) {
+            let x = -b / (2 * a);
+            document.write("<p>Tiene una única solución: x = " + x + "</p>");
+        } else {
+            document.write("<p>La ecuación no tiene soluciones reales.</p>");
+        }
+    </script>
+</body>
+
+</html>

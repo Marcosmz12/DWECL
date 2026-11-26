@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 9</title>
+</head>
+<body>
+    <script>
+        function escribirTablaPalabra(palabra) {
+            let n = palabra.length;
+
+            document.write("<table cellpadding='5'>");
+
+            for (let i = 0; i < n; i++) {
+                document.write("<tr>");
+
+                for (let j = 0; j < n; j++) {
+                    if (i === 0) {
+                        // Primera fila: palabra normal
+                        document.write("<td>" + palabra.charAt(j) + "</td>");
+                    } else if (i === n - 1) {
+                        // Última fila: palabra al revés
+                        document.write("<td>" + palabra.charAt(n - 1 - j) + "</td>");
+                    } else if (j === 0) {
+                        // Primera columna
+                        document.write("<td>" + palabra.charAt(i) + "</td>");
+                    } else if (j === n - 1) {
+                        // Última columna
+                        document.write("<td>" + palabra.charAt(n - 1 - i) + "</td>");
+                    } else {
+                        // Interior vacío
+                        document.write("<td>&nbsp;</td>");
+                    }
+                }
+
+                document.write("</tr>");
+            }
+
+            document.write("</table>");
+        }
+
+        let palabra = prompt("Introduce una palabra (ej: HOLA):");
+        escribirTablaPalabra(palabra);
+    </script>
+</body>
+</html>

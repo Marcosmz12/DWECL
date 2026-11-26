@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 8</title>
+</head>
+<body>
+    <script>
+        function contarPalabras(cadena) {
+            let trozos = cadena.trim().split(" ");
+            let contador = 0;
+
+            for (let i = 0; i < trozos.length; i++) {
+                // Solo contamos los trozos que no estén vacíos
+                if (trozos[i] !== "") {
+                    contador++;
+                }
+            }
+            return contador;
+        }
+
+        let texto = prompt("Introduce una frase (puedes poner espacios extra):");
+        document.write("<p>Número de palabras: " + contarPalabras(texto) + "</p>");
+    </script>
+</body>
+</html>

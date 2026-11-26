@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script>
+        function ordenarLetras(cadena) {
+            let consonantes = "";
+            let vocales = "";
+            let listaVocales = "aeiouáéíóúAEIOUÁÉÍÓÚ";
+
+            for (let i = 0; i < cadena.length; i++) {
+                let letra = cadena.charAt(i);
+
+                if (letra === " ") {
+                    continue; // Salta los espacios en blanco
+                } else if (listaVocales.indexOf(letra) !== -1) {
+                    vocales += letra;
+                } else {
+                    consonantes += letra;
+                }
+            }
+            return consonantes + vocales;
+        }
+
+        let texto = prompt("Introduce una cadena de texto:");
+        document.write("<p>Resultado: " + ordenarLetras(texto) + "</p>");
+    </script>
+</body>
+</html>

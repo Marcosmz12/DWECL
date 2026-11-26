@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6</title>
+</head>
+
+<body>
+    <p id="reloj"></p>
+
+    <ul>
+        <li><a href="#" onclick="window.close(); return false;">Cerrar la ventana</a></li>
+        <li><a href="#" onclick="window.blur(); return false;">Pasar la ventana a segundo plano</a></li>
+        <li><a href="#" onclick="window.moveTo(300, 300); return false;">Mover la ventana a la posición 300, 300</a>
+        </li>
+        <li><a href="#" onclick="window.resizeTo(200, 200); return false;">Cambiar el tamaño de la ventana a 200x200</a>
+        </li>
+    </ul>
+
+    <script>
+        function mostrarHora() {
+            let ahora = new Date();
+            let h = ahora.getHours();
+            let m = ahora.getMinutes();
+            let s = ahora.getSeconds();
+
+            if (h < 10) h = "0" + h;
+            if (m < 10) m = "0" + m;
+            if (s < 10) s = "0" + s;
+
+            let horaFormateada = h + ":" + m + ":" + s;
+
+            window.status = horaFormateada;
+            document.getElementById("reloj").innerHTML = "Hora actual: " + horaFormateada;
+        }
+
+        mostrarHora();
+        setInterval(mostrarHora, 1000);
+    </script>
+</body>
+
+</html>

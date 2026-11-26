@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <script>
+        function buscarApariciones(cadena, subcadena) {
+            let posiciones = [];
+            let pos = cadena.indexOf(subcadena);
+
+            while (pos !== -1) {
+                posiciones.push(pos);
+                pos = cadena.indexOf(subcadena, pos + 1);
+            }
+            return posiciones;
+        }
+
+        let texto = prompt("Introduce el texto principal:");
+        let buscar = prompt("Introduce la subcadena a buscar:");
+        let resultado = buscarApariciones(texto, buscar);
+
+        if (resultado.length > 0) {
+            document.write("<p>Aparece en las posiciones: " + resultado.join(", ") + "</p>");
+        } else {
+            document.write("<p>No se ha encontrado la subcadena.</p>");
+        }
+    </script>
+</body>
+</html>

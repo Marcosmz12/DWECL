@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2 - Screen</title>
+</head>
+
+<body>
+    <h2>Información de la Pantalla</h2>
+    <script>
+        document.write("<table border='1' cellpadding='5'>");
+        document.write("<tr><th>Propiedad</th><th>Valor</th></tr>");
+        document.write("<tr><td>Ancho total (width)</td><td>" + screen.width + "</td></tr>");
+        document.write("<tr><td>Alto total (height)</td><td>" + screen.height + "</td></tr>");
+        document.write("<tr><td>Ancho disponible (availWidth)</td><td>" + screen.availWidth + "</td></tr>");
+        document.write("<tr><td>Alto disponible (availHeight)</td><td>" + screen.availHeight + "</td></tr>");
+        document.write("<tr><td>Profundidad de color (colorDepth)</td><td>" + screen.colorDepth + "</td></tr>");
+        document.write("<tr><td>Profundidad de píxel (pixelDepth)</td><td>" + screen.pixelDepth + "</td></tr>");
+        document.write("</table>");
+    </script>
+</body>
+
+</html>

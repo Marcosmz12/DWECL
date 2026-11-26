@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 6</title>
+</head>
+<body>
+    <script>
+        function comprobarSubcadena(cad1, cad2) {
+            let pos = cad1.indexOf(cad2);
+
+            if (pos !== -1) {
+                return "Sí es subcadena y empieza en la posición " + pos;
+            } else {
+                return "No es una subcadena de la primera.";
+            }
+        }
+
+        let texto1 = prompt("Introduce la primera cadena:");
+        let texto2 = prompt("Introduce la segunda cadena:");
+        document.write("<p>" + comprobarSubcadena(texto1, texto2) + "</p>");
+    </script>
+</body>
+</html>
